@@ -17,6 +17,8 @@ mongoose.connect(process.env.DB_URL)
         origin:"http://localhost:3001",
         credentials:true
     }))
+
+    
     app.use(cookieParser());
     app.use(express.static("public"));
     app.use(bodyParser.json());
