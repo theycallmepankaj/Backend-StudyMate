@@ -36,7 +36,7 @@ const io = new Server(server, {
 });
 
 app.use(cors({
-  origin: "http://localhost:3001",
+  origin: ["http://localhost:3001","https://frontend-studymate.onrender.com"],
   // methods: ["GET", "POST",'DELETE'],
   credentials: true
 }));
