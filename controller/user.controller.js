@@ -103,8 +103,8 @@ export const authenticate = async (request,response,next)=>{
             if(user){
         response.cookie("token",genrateToken(user._id,user.email),{ 
              httpOnly: true,
-             secure: false, 
-             sameSite: "lax"
+            //  secure: false, 
+            //  sameSite: "lax"
         });
         let status = bcrypt.compareSync(password,user.password);
         console.log("status :- ",user);
