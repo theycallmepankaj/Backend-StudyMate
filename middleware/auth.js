@@ -9,8 +9,8 @@ export const auth = async (request,response,next)=>{
         if(!token){
             return response.status(401).json({Message:"Unauthorized User..."});
         }
-        let decode = jwt.verify(token,process.env.SECRET_KEY);
-        request.user = decode;
+        let decoded = jwt.verify(token,process.env.SECRET_KEY);
+        request.user = {...decoded,id: decoded._id || decoded.id,};
         next();
     }catch(err){
         console.log(err);

@@ -18,7 +18,13 @@ const noteSchema = new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"User",
         required:true
-    }
+    },
+    uploadedAt: { 
+        type: String, required:true
+    },
+    // isDownloaded: { 
+    //     type: Boolean, default: false 
+    // }
 });
 
 

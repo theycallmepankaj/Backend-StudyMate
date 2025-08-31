@@ -39,22 +39,22 @@ export const createProfile = async (request, response, next) => {
             return response.status(404).json({ message: "User not found" });
         }
 
-        // Ensure user.profile exists
+        
         if (!user.profile) {
             user.profile = {};
         }
 
-        // ✅ Only assign image if file exists
+        
         if (request.file && request.file.filename) {
             user.profile.imageName = request.file.filename;
         }
 
-        // ✅ Update profile safely
+       
         user.profile.address = request.body.address || user.profile.address;
         user.profile.contact = request.body.contact || user.profile.contact;
         user.profile.bio = request.body.bio || user.profile.bio;
 
-        // ✅ Update base fields safely
+        
         user.name = request.body.name ?? user.name;
         user.email = request.body.email ?? user.email;
 

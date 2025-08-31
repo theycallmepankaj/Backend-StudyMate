@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
         imageName:{
         type:String,
         default:"a771c3d7ad0650959a7da7acee4e8fe4"
-        },
+        },  
         contact:{
             type:String,
             isNumeric: true

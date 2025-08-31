@@ -16,7 +16,12 @@ const assignmentSchema = new mongoose.Schema({
                 ref:"User"
             },
             fileUrl:String,
-            submittedAt:Date
+            submittedAt:Date,
+            status: {
+            type: String,
+            enum: ["Not Started", "In Progress", "Submitted"],
+            default: "Not Started"
+        },
         }
     ]
 });
